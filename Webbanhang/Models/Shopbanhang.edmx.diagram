@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="351a976b70bf446fa9be78f884067e67" Name="Diagram1">
+        <EntityTypeShape EntityType="ShopsModel.ChiTietDonHang" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopsModel.ChiTietPhieuNhap" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopsModel.DonDatHangg" Width="1.5" PointX="3" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopsModel.KhachHang" Width="1.5" PointX="5.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopsModel.LoaiSanPham" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopsModel.LoaiThanhVien" Width="1.5" PointX="1.5" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopsModel.LoaiThanhVien_Quyenn" Width="1.5" PointX="3.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopsModel.MemuDoc" Width="1.5" PointX="7.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopsModel.NhaCungCap" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopsModel.Nhanvien" Width="1.5" PointX="7.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopsModel.NhaSanXuat" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopsModel.PhieuNhap" Width="1.5" PointX="3" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopsModel.Quyen" Width="1.5" PointX="1.5" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopsModel.SanPham" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopsModel.SanPhooom" Width="1.5" PointX="7.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopsModel.sysdiagram" Width="1.5" PointX="9.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopsModel.ThanhVien" Width="1.5" PointX="0.75" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopsModel.TinTuc" Width="1.5" PointX="9.75" PointY="5.25" IsExpanded="true" />
+        <AssociationConnector Association="ShopsModel.FK_ChiTietDonHang_DonDatHangg" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopsModel.FK_ChiTietDonHang_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopsModel.FK_ChiTietPhieuNhap_PhieuNhap" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopsModel.FK_ChiTietPhieuNhap_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopsModel.FK_DonDatHangg_ThanhVien" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopsModel.FK_SanPhammm_LoaiSanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopsModel.FK_LoaiThanhVien_Quyenn_LoaiThanhVien" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopsModel.FK_ThanhVien_LoaiThanhVien" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopsModel.FK_LoaiThanhVien_Quyenn_Quyen" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopsModel.FK_SanPham_NhaCungCap" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopsModel.FK_SanPham_NhaSanXuat" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

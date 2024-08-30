@@ -1,0 +1,60 @@
+﻿@using Webbanhang.Models
+@{
+    ViewBag.Title = "TaiKhoanCuaToi";
+    ThanhVien thanhVien = (ThanhVien)Session["TaiKhoan"];
+}
+<div class="header-top">
+    <div class="container">
+        <div class="header-top-nav">
+            <div class="row">
+                <!-- Begin Header Top Left Area Area -->
+                <div class="col-lg-5 col-md-6">
+
+                </div>
+                <!-- Header Top Left Area End Here -->
+                <!-- Begin Header Top Right Area -->
+                <div class="col-lg-7 col-md-6">
+                    <div class="header-top-right">
+                        <ul class="user-block list-inline">
+                            <div class="col-lg-7 col-md-6">
+                                <div class="header-top-right">
+                                    <ul class="user-block list-inline">
+                                        @if (Session["TaiKhoan"] != null)
+                                        {
+                                            ThanhVien thanhVienn = (ThanhVien)Session["TaiKhoan"];
+                                            <i class="fa-solid fa-user" style="font-size:13px; margin:6px 5px 0 0"></i>
+                                            <ul class="single-top-selector">
+                                                <li class="currency list-inline-item">
+                                                    <span style="font-size:13px; color:white">@thanhVienn.Hoten</span>
+                                                    <div class="btn-group">
+                                                        <button class="dropdown-toggle" style="border:none;background-color:white">
+                                                            <i class="fa fa-caret-down"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu" style="width:150px">
+                                                            <ul>
+                                                                <li><a href="~/NguoiDung/TaiKhoanCuaToi">Tài khoản của tôi</a></li>
+                                                                <li>@Html.ActionLink("Đăng xuất", "DangXuat", "NguoiDung")</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        }
+                                        else
+                                        {
+                                            <li><a href="~/NguoiDung/Dangky">Đăng ký</a></li>
+                                            <li><a href="~/NguoiDung/Dangnhap">Đăng nhập</a></li>
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+                        </ul>
+                    </div>
+                </div>
+                <!-- Header Top Right Area End Here -->
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,80 @@
+﻿@using Webbanhang.Models
+@model IEnumerable<SanPham>
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Layout/_LayoutHome.cshtml";
+}
+@{
+    IEnumerable<SanPham> lstspmoi = ViewBag.ListSanPhamMoi as IEnumerable<SanPham>;
+    IEnumerable<SanPham> lsttulanh = ViewBag.ListTulanh as IEnumerable<SanPham>;
+    IEnumerable<SanPham> lsttivi = ViewBag.ListTivi as IEnumerable<SanPham>;
+    IEnumerable<SanPham> lstgiadungmoi = ViewBag.Listgiadung as IEnumerable<SanPham>;
+    IEnumerable<SanPham> lstgiadungnoibat = ViewBag.Listgiadungnoibat as IEnumerable<SanPham>;
+}
+@Html.Partial("~/Views/Home/Slide.cshtml")
+@Html.Partial("~/Views/SanPhams/SanPhamStyle1Partial.cshtml", lstspmoi)
+@Html.Partial("~/Views/SanPhams/SanPhamStyle2Partial.cshtml", lsttulanh)
+@Html.Partial("~/Views/SanPhams/SanPhamStyle3Partial.cshtml", lsttivi)
+<div class="fb-banner_with-new_product pb-60">
+    <div class="container">
+        <div class="row">
+            @Html.Partial("~/Views/SanPhams/SanPhamStyle4Partial.cshtml", lstgiadungmoi)
+            @Html.Partial("~/Views/SanPhams/SanPhamStyle5Partial.cshtml", lstgiadungnoibat)
+        </div>
+    </div>
+</div>
+<div class="fb-branding-wrap pb-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="fb-branding bg-white">
+                    <div class="fb-branding_active owl-carousel">
+                        <div class="branding-item">
+                            <a href="#">
+                                <img src="~/assets/images/branding/1.jpg" alt="FB's Branding">
+                            </a>
+                        </div>
+                        <div class="branding-item">
+                            <a href="#">
+                                <img src="~/assets/images/branding/2.jpg" alt="FB's Branding">
+                            </a>
+                        </div>
+                        <div class="branding-item">
+                            <a href="#">
+                                <img src="~/assets/images/branding/3.jpg" alt="FB's Branding">
+                            </a>
+                        </div>
+                        <div class="branding-item">
+                            <a href="#">
+                                <img src="~/assets/images/branding/4.jpg" alt="FB's Branding">
+                            </a>
+                        </div>
+                        <div class="branding-item">
+                            <a href="#">
+                                <img src="~/assets/images/branding/5.jpg" alt="FB's Branding">
+                            </a>
+                        </div>
+                        <div class="branding-item">
+                            <a href="#">
+                                <img src="~/assets/images/branding/6.jpg" alt="FB's Branding">
+                            </a>
+                        </div>
+                        <div class="branding-item">
+                            <a href="#">
+                                <img src="~/assets/images/branding/1.jpg" alt="FB's Branding">
+                            </a>
+                        </div>
+                        <div class="branding-item">
+                            <a href="#">
+                                <img src="~/assets/images/branding/2.jpg" alt="FB's Branding">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- shop-top-bar end -->
+<!-- shop-products-wrapper start -->
+<!--  -->

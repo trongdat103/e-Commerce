@@ -1,0 +1,91 @@
+﻿@using Webbanhang.Models
+@model IEnumerable<SanPham>
+<div class="fb-product_with_banner fb-featured-pro_with_banner pt-60 pb-60">
+    <div class="container">
+        <div class="fb-section_title-2">
+            <h2>Sản phẩm mới</h2>
+        </div>
+        <div class="row no-gutters">
+            <!-- Begin FB's Banner Area -->
+            <div class="col-xl-3 col-lg-4 col-md-5">
+                <div class="fb-banner fb-img-hover-effect">
+                    <a href="#">
+                        <img src="~/assets/images/banner/1_3.jpg" alt="FB'S Banner">
+                    </a>
+                </div>
+            </div>
+            <!-- FB's Banner Area End Here -->
+            <!-- Begin FB's Product Wrap Area -->
+            <div class="col-xl-9 col-lg-8 col-md-7">
+                <div class="fb-product_wrap bg-white">
+                    <div class="fb-product_active owl-carousel">
+                        @foreach (var item in Model)
+                        {
+                            <div class="single-product">
+                                <div class="product-img">
+                                    <a href="@Url.Action("ChiTietSanPham","SanPhams",new {id = item.IDSP })">
+                                        <img class="primary-img" src="@Url.Content("~/assets/images/product/" + @item.HinhAnh1)" alt="FB'S Prduct">
+                                    </a>
+                                    <div class="sticker"><span>Mới</span></div>
+                                </div>
+                                <div class="product-content">
+                                    <h2 class="product-name">
+                                        <a href="@Url.Action("ChiTietSanPham","SanPhams",new {id = item.IDSP })">@item.TenSP</a>
+                                    </h2>
+                                    <div class="rating-box">
+                                        <ul class="rating">
+                                            <li class="no-star"><i class="fa fa-star"></i></li>
+                                            <li class="no-star"><i class="fa fa-star"></i></li>
+                                            <li class="no-star"><i class="fa fa-star"></i></li>
+                                            <li class="no-star"><i class="fa fa-star"></i></li>
+                                            <li class="no-star"><i class="fa fa-star"></i></li>
+                                        </ul>
+                                    </div>
+                                    <div class="price-box-2">
+                                        <span class="new-price">@item.DonGia.Value.ToString("#,##") VND</span>
+                                    </div>
+                                    <div class="product-action">
+                                        <ul class="product-action-link">
+                                            <li class="shopping-cart_link"><a href="cart.html" title="Shopping Cart"><i class="ion-bag"></i></a></li>
+                                            <li class="quick-view-btn"><a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="ion-eye"></i></a></li>
+                                            <li class="single-product_link"><a href="@Url.Action("ChiTietSanPham","SanPham",new {id = item.IDSP })" title="Single Product"><i class="ion-link"></i></a></li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- Product Content Area End Here -->
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <!-- FB's Product Wrap Area End Here -->
+        </div>
+    </div>
+</div>
+<div class="fb-banner_wrap">
+    <div class="container">
+        <div class="row">
+            <!-- Begin FB's Banner Area -->
+            <div class="col-lg-6">
+                <div class="fb-banner fb-img-hover-effect pb-sm-30 pb-xs-30">
+                    <a href="#">
+                        <img src="~/assets/images/banner/1_5.jpg" alt="FB'S Banner">
+                    </a>
+                </div>
+            </div>
+            <!-- FB's Banner Area End Here -->
+            <!-- Begin FB's Banner Area -->
+            <div class="col-lg-6">
+                <div class="fb-banner fb-img-hover-effect">
+                    <a href="#">
+                        <img src="~/assets/images/banner/1_4.jpg" alt="FB'S Banner">
+                    </a>
+                </div>
+
+            </div>
+            <!-- FB's Banner Area End Here -->
+        </div>
+    </div>
+</div>
+

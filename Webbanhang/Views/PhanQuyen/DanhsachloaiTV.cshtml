@@ -1,0 +1,73 @@
+﻿@using Webbanhang.Models
+@model IEnumerable<LoaiThanhVien>
+@{
+    ViewBag.Title = "Danhsachtv";
+    Layout = "~/Views/Layout/Adminlayout.cshtml";
+    WebGrid grid = new WebGrid(source: Model, rowsPerPage: 10);
+}
+<h2>Danh sách loại thành viên</h2>
+@grid.GetHtml(
+    tableStyle: "Table",
+    headerStyle: "GirdHead",
+    footerStyle: "GirdFooter",
+    rowStyle: "girdRow",
+    alternatingRowStyle: "girdAltRow",
+    columns: grid.Columns(
+    grid.Column("MaLoaiTV", "Mã loại thành viên"),  
+    grid.Column("TenLoaiTV", "Tên loại thành viên"),   
+    grid.Column(format: p => Html.ActionLink("Phân quyền", "PhanQuyen", new { id = p.MaLoaiTV }, new { @target = " blank" }))
+    ))
+
+<style>
+    .Table {
+        width: 95%;
+        border-collapse: collapse;
+        background-color: #ffffff;
+        font-size: 14px;
+        margin-left: 35px;
+        border: 2px solid #f1f1f1;
+    }
+
+    .GirdHead {
+        background-color: #ffffff;
+        color: #fff;
+        font-weight: bold;
+        border: 2px solid #f1f1f1;
+    }
+
+        .GirdHead th {
+            padding: 8px;
+            border-right: 2px solid #f1f1f1; /* Viền cho hàng dọc (cột) */
+        }
+
+    .girdRow {
+        background-color: #fff;
+    }
+
+    .girdAltRow {
+        background-color: #f9f9f9;
+    }
+
+    .girdRow, .girdAltRow {
+        border-bottom: 1px solid #ddd;
+    }
+
+        .girdRow td, .girdAltRow td {
+            padding: 8px;
+            border-right: 2px solid #f1f1f1; /* Viền cho hàng dọc (cột) */
+        }
+
+    .GirdFooter {
+        text-align: center;
+        font-size: 20px;
+    }
+
+        .GirdFooter a {
+            background: #4e73df;
+            color: white;
+            margin: 0 10px;
+            border-radius: 5px;
+            padding: 0 5px;
+        }
+</style>
+

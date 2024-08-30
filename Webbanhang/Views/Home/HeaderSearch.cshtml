@@ -1,0 +1,33 @@
+﻿<div class="header-middle">
+    <div class="container logo-nav">
+        <div class="row align-items-center">
+            <!-- Begin Logo Area -->
+            <div class="col-lg-3">
+                <div class="logo">
+                    <a href="~/Home/Index">
+                        <img src="~/assets/images/menu/logo/1.png" alt="FB's Logo">
+                    </a>
+                </div>
+            </div>
+            <!-- Logo Area End Here -->
+            <!-- Begin Header Middle Right Area -->
+            <div class="col-lg-9">
+                <!-- Begin Header Middle Right Area -->
+                <div class="header-middle-right">
+
+                    <!-- Begin Header Middle Searchbox Area -->
+
+                    @using (Html.BeginForm("LayTuKhoaTimKiem", "Timkiem", FormMethod.Get, new { @class = "hm-searchbox hb-searchbox mt-xs-20" }))
+                    {
+                        <input type="text" name="tuKhoa" placeholder="Tên sản phẩm cần tìm ..." class="hm-searchbox-input" style="width:620px; border-radius:36px">
+                        <button class="fb-search_btn hm-searchbox-btn" value="Tìm Kiếm" type="submit"><i class="fa fa-search"></i></button>
+                    }
+                        <!-- Header Middle Searchbox Area End Here -->
+                    @Html.Action("GioHangPartial", "Giohang")   
+                    </div>
+                <!-- Header Middle Right Area End Here -->
+            </div>
+            <!-- Header Middle Right Area End Here -->        
+        </div>
+    </div>
+</div>

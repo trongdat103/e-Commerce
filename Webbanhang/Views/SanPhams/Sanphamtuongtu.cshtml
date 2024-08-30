@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Webbanhang.Models.SanPham>
+<div class="fb-product_with_banner fb-featured-pro_with_banner other-product pt-60 pb-60">
+    <div class="container">
+        <div class="other-product-nav bg-white">
+            <div class="fb-section_title-2">
+                <h2>Có @ViewBag.TinhSoLuong sản phẩm khác cùng loại:</h2>
+            </div>
+            <div class="row no-gutters">
+                <!-- Begin FB's Product Wrap Area -->
+                <div class="col-lg-12">
+                    <div class="fb-product_wrap bg-white mt-sm-60 mt-xs-60">
+                        <div class="fb-other-product_active owl-carousel">
+                            <!-- Begin Sigle Product Area -->
+                            @foreach (var item in Model)
+                            {
+                                <div class="single-product">
+                                    <!-- Begin Product Image Area -->
+                                    <div class="product-img">
+                                        <a href="@Url.Action("ChiTietSanPham","SanPhams",new {id = item.IDSP })">
+                                            <img class="primary-img" src="@Url.Content("~/assets/images/product/" + @item.HinhAnh1)"
+                                                 alt="FB'S Prduct">
+                                            <img class="secondary-img" src="@Url.Content("~/assets/images/product/" + @item.HinhAnh1)"
+                                                 alt="FB'S Prduct">
+                                        </a>
+                                       
+                                    </div>
+                                    <!-- Product Image Area End Here -->
+                                    <!-- Begin Product Content Area -->
+                                    <div class="product-content">
+                                        <h2 class="product-name">
+                                            <a href="@Url.Action("ChiTietSanPham","SanPhams",new {id = item.IDSP })">@item.TenSP</a>
+                                        </h2>
+                                        <div class="rating-box">
+                                            <ul class="rating">
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="price-box-2">
+                                            <span class="new-price">@item.DonGia</span>
+                                        </div>
+                                        <div class="product-action">
+                                            <ul class="product-action-link">
+                                                <li class="shopping-cart_link">
+                                                    <a href="cart.html"
+                                                       title="Shopping Cart"><i class="ion-bag"></i></a>
+                                                </li>
+                                                <li class="quick-view-btn">
+                                                    <a href="#" title="Quick View"
+                                                       data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+                                                        <i class="ion-eye"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="single-product_link">
+                                                    <a href="@Url.Action("ChiTietSanPham","SanPhams",new {id = item.IDSP })"
+                                                       title="Single Product"><i class="ion-link"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- Product Content Area End Here -->
+
+                                </div>
+                            }
+                            <!-- Sigle Product Area End Here -->
+                            <!-- Begin Sigle Product Area -->
+                            <!-- Sigle Product Area End Here -->
+                        </div>
+                    </div>
+                </div>
+                <!-- FB's Product Wrap Area End Here -->
+            </div>
+        </div>
+    </div>
+</div>
+

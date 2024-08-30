@@ -1,0 +1,72 @@
+﻿@model Webbanhang.Models.ThanhVien
+<div class="page-section pt-60 pb-60">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6 mb-30">
+                <!-- Login Form s-->
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="login-form">
+                        <h4 class="login-title">Đăng ký</h4>
+                        <div class="row">
+                            <div class="col-md-12 col-12 mb-20">
+                                <label>Tên tài khoản</label>
+                                @Html.EditorFor(model => model.TaiKhoan, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.TaiKhoan, "", new { @class = "text-danger" })
+                                <p style="color: red">@ViewBag.TrungLap</p>
+                                <p style="color: red">@ViewBag.Taikhoannull</p>
+                            </div>
+                            <div class="col-12 mb-20">
+                                <label>Mật khẩu</label>
+                                @Html.PasswordFor(model => model.MatKhau, new { @class = "form-control", placeholder = "Nhập mật khẩu" })
+                                @Html.ValidationMessageFor(model => model.MatKhau, "", new { @class = "text-danger" })
+                                <p style="color: red">@ViewBag.Matkhaunull</p>
+                            </div>
+                            <div class="col-12 mb-20">
+                                <label>Nhập lại mật khẩu</label>
+                                @Html.Password("txtmatkhau", null, new { @class = "form-control", placeholder = "Nhập lại mật khẩu" })
+                                <p style="color: red">@ViewBag.nhaplaimknull</p>
+                                <p style="color: red">@ViewBag.Khacmk</p>
+                                <!-- Bạn có thể thêm thêm validation message nếu cần -->
+                            </div>
+                            <div class="col-12 mb-20">
+                                <label>Họ tên</label>
+                                @Html.EditorFor(model => model.Hoten, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Hoten, "", new { @class = "text-danger" })
+                                <p style="color: red">@ViewBag.Hotennull</p>
+                            </div>
+
+                            <div class="col-12 mb-20">
+                                <label>Địa chỉ</label>
+                                @Html.EditorFor(model => model.DiaChi, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.DiaChi, "", new { @class = "text-danger" })
+                                <p style="color: red">@ViewBag.diachinull</p>
+                            </div>
+                            <div class="col-12 mb-20">
+                                <label>Địa chỉ Email</label>
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                <p style="color: red">@ViewBag.emailnull</p>
+                            </div>
+                            <div class="col-12 mb-20">
+                                <label>Điện thoại</label>
+                                @Html.EditorFor(model => model.DienThoai, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.DienThoai, "", new { @class = "text-danger" })
+                                <p style="color: red">@ViewBag.Dienthoainull</p>
+                            </div>
+                            <div class="col-md-12">
+                                <button class="register-button mt-0">Đăng ký</button>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

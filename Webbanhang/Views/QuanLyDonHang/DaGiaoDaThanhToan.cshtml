@@ -1,0 +1,83 @@
+﻿@using Webbanhang.Models
+@model IEnumerable<DonDatHangg>
+@{
+    ViewBag.Title = "Dagiaovathanhtoan";
+    Layout = "~/Views/Layout/Adminlayout.cshtml";
+    WebGrid grid = new WebGrid(source: Model, rowsPerPage: 10);
+}
+<h2>Quản lý đơn hàng (Danh sách đơn hàng đã giao và thanh toán)</h2>
+<ul class="nav nav-tabs">
+    <li role="presentation" class="active" style="margin-left: 34px"><a class="btn btn-primary" href="@Url.Action("ChuaThanhToan", "QuanLyDonHang")">Chưa thanh toán</a></li>
+    <li role="presentation" style="margin-left: 34px"><a class="btn btn-primary" href="@Url.Action("ChuaGiao", "QuanLyDonHang")">Chưa giao</a></li>
+    <li role="presentation" class="active" style="margin-left: 34px"><a style="background-color: white; color: hotpink;" class="btn btn-primary" href="@Url.Action("DaGiaoDaThanhToan", "QuanLyDonHang")">Đã giao đã thanh toán</a></li>
+</ul>
+@grid.GetHtml(
+    tableStyle: "Table",
+    headerStyle: "GirdHead",
+    footerStyle: "GirdFooter",
+    rowStyle: "girdRow",
+    alternatingRowStyle: "girdAltRow",
+    columns: grid.Columns(
+    grid.Column("MaDDH", "Mã đơn đặt hàng"),
+    grid.Column("MaTV", "Tên khách hàng", format: p => p.MaTV != null ? p.ThanhVien.Hoten : ""),
+    grid.Column("NgayDat", "Ngày đặt"),
+    grid.Column("TinhTrangGiao", "Tình trạng giao"),
+    grid.Column("NgayGiao", "Ngày giao"),
+    grid.Column("DaThanhToan", "Đã thanh toán"),
+    grid.Column("UuDai", "Ưu đãi"),
+    grid.Column(format: p => Html.ActionLink("Chi tiết đơn hàng", "ChiTietDonHang", new { id = p.MaDDH }, new { @target = " blank" }))
+    ))
+
+<style>
+    .Table {
+        width: 95%;
+        border-collapse: collapse;
+        background-color: #ffffff;
+        font-size: 14px;
+        margin-left: 35px;
+        border: 2px solid #f1f1f1;
+    }
+
+    .GirdHead {
+        background-color: #ffffff;
+        color: #fff;
+        font-weight: bold;
+        border: 2px solid #f1f1f1;
+    }
+
+        .GirdHead th {
+            padding: 8px;
+            border-right: 2px solid #f1f1f1; /* Viền cho hàng dọc (cột) */
+        }
+
+    .girdRow {
+        background-color: #fff;
+    }
+
+    .girdAltRow {
+        background-color: #f9f9f9;
+    }
+
+    .girdRow, .girdAltRow {
+        border-bottom: 1px solid #ddd;
+    }
+
+        .girdRow td, .girdAltRow td {
+            padding: 8px;
+            border-right: 2px solid #f1f1f1; /* Viền cho hàng dọc (cột) */
+        }
+
+    .GirdFooter {
+        text-align: center;
+        font-size: 20px;
+    }
+
+        .GirdFooter a {
+            background: #4e73df;
+            color: white;
+            margin: 0 10px;
+            border-radius: 5px;
+            padding: 0 5px;
+        }
+</style>
+

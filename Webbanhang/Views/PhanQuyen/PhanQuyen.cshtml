@@ -1,0 +1,86 @@
+﻿@using Webbanhang.Models
+@model LoaiThanhVien
+@{
+    ViewBag.Title = "PhanQuyen";
+    Layout = "~/Views/Layout/Adminlayout.cshtml";
+}
+<h1>Phân quyền</h1>
+<h2 style="color: red;">Loại thành viên : <font style="color: orange">@Model.TenLoaiTV</font>  </h2>
+<br />
+@{
+    IEnumerable<Quyen> lstQuyen = (IEnumerable<Quyen>)ViewBag.MaQuyen;
+    IEnumerable<LoaiThanhVien_Quyenn> lstTVQuyen = (IEnumerable<LoaiThanhVien_Quyenn>)ViewBag.LoaiTVQuyen;
+}
+@using (Html.BeginForm())
+{
+    @Html.Hidden("MaLTV", Model.MaLoaiTV)
+    if (lstTVQuyen != null)
+    {
+        for (int j = 0; j < lstQuyen.Count(); j++)
+        {
+            int a = 0;
+            for (int i = 0; i < lstTVQuyen.Count(); i++)
+            {
+                if (lstQuyen.ElementAt(j).MaQuyen == lstTVQuyen.ElementAt(i).MaQuyen)
+                {
+                    a++;
+                    break;
+                }
+            }
+            if (a != 0)
+            {
+                <div class="col-md-4" style="font-size: 15px;">
+
+                    <input class="ckb_click" checked="checked" style="width: 20px; height: 20px;" type="checkbox" name="@Url.Content("["+j+ "].MaQuyen")" value="@lstQuyen.ElementAt(j).MaQuyen" /> @lstQuyen.ElementAt(j).TenQuyen
+                </div>
+            }
+            else
+            {
+                <div class="col-md-4" style="font-size: 15px;">
+
+                    <input class="ckb_click" style="width: 20px; height: 20px;" type="checkbox" name="@Url.Content("["+j+"].MaQuyen")" value="@lstQuyen.ElementAt(j).MaQuyen" /> @lstQuyen.ElementAt(j).TenQuyen
+                </div>
+            }
+            a = 0;
+
+
+        }
+
+    }
+    else
+    {
+        for (int i = 0; i < lstQuyen.Count(); i++)
+        {
+            <div class="col-md-4" style="font-size: 15px;">
+
+                <input class="ckb_click" style="width: 20px; height: 20px;" type="checkbox" name="@Url.Content("["+i+ "].MaQuyen")" value="@lstQuyen.ElementAt(i).MaQuyen" /> @lstQuyen.ElementAt(i).TenQuyen
+            </div>
+        }
+
+    }
+    <div class="clearfix"></div>
+    <input type="submit" value="Thực hiện" class="btn btn-success" />
+
+
+}
+<br />
+@Html.ActionLink("Trở về", "DanhsachloaiTV", null, new { @class = "btn btn-primary" })
+@*Viết hàm scrip để duyệt lại checkbox đã được check*@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Đặt mã JavaScript của bạn sau khi đã bao gồm jQuery -->
+<script>
+    $(document).ready(function () {
+        $(".ckb_click").click(function () {
+            i = 0;
+            $(".ckb_click").each(function () {
+                if ($(this).is(':checked')) {
+                    $(this).attr("name", "[" + i + "].MaQuyen");
+                    i++;
+                }
+            });
+        });
+    });
+</script>
+
+

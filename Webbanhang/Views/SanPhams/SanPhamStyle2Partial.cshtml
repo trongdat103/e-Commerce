@@ -1,0 +1,448 @@
+﻿@model IEnumerable<Webbanhang.Models.SanPham>
+<div class="fb-banner_with_list-product cookware-product pt-60 pb-60">
+    <div class="container">
+        <div class="fb-product_list_nav">
+            <div class="row no-gutters">
+                <div class="col-xl-3 col-lg-4 col-md-5">
+                    <div class="fb-section_title-2">
+                        <h2>Tủ lạnh</h2>
+                    </div>
+                    <!-- Begin FB's Banner Area -->
+                    <div class="fb-banner fb-img-hover-effect">
+                        <a href="#">
+                            <img src="~/assets/images/banner/4_4.jpg" alt="FB'S Banner">
+                        </a>
+                    </div>
+                    <!-- FB's Banner Area End Here -->
+                </div>
+                <div class="col-xl-9 col-lg-8 col-md-7">
+
+                    <!-- Begin FB's List Product Area -->
+                    <div class="fb-list_product">
+                        <div class="fb-list_product_active owl-carousel">
+                            <div class="row no-gutters">
+                                <!-- Begin Sigle Product Area -->
+                                <div class="single-product list-single_product">
+                                    <!-- Begin Product Image Area -->
+                                    <div class="product-img list-product_img">
+                                        <a href="@Url.Action("ChiTietSanPham","SanPhams",new {id = Model.ElementAt(0).IDSP})">
+                                            <img class="primary-img" src="@Url.Content("~/assets/images/product/" + Model.ElementAt(0).HinhAnh1)"
+                                                 alt="FB'S Prduct">
+                                            <img class="secondary-img" src="@Url.Content("~/assets/images/product/" + Model.ElementAt(0).HinhAnh1)"
+                                                 alt="FB'S Prduct">
+                                        </a>
+
+                                    </div>
+                                    <!-- Product Image Area End Here -->
+                                    <!-- Begin Product Content Area -->
+                                    <div class="product-content list-product_content">
+                                        <h2 class="product-name">
+                                            <a href="@Url.Action("ChiTietSanPham","SanPhams",new {id = Model.ElementAt(0).IDSP})">@Model.ElementAt(0).TenSP</a>
+                                        </h2>
+                                        <div class="rating-box">
+                                            <ul class="rating">
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="price-box">
+                                            <span class="new-price">@Html.Raw(Model.ElementAt(0).DonGia)</span>
+                                        </div>
+                                        <div class="product-action list-product_action">
+                                            <ul class="product-action-link">
+                                                <li class="shopping-cart_link">
+                                                    <a href="shopping-cart.html"
+                                                       title="Shopping Cart"><i class="ion-bag"></i></a>
+                                                </li>
+                                                <li class="quick-view-btn">
+                                                    <a href="#" title="Quick View"
+                                                       data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+                                                        <i class="ion-eye"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="single-product_link">
+                                                    <a href="product-details.html"
+                                                       title="Single Product"><i class="ion-link"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- Product Content Area End Here -->
+                                </div>
+                                <!-- Sigle Product Area End Here -->
+                                <!-- Begin Sigle Product Area -->
+                                <div class="single-product list-single_product">
+                                    <!-- Begin Product Image Area -->
+                                    <div class="product-img list-product_img">
+                                        <a href="@Url.Action("ChiTietSanPham","SanPhams",new {id = Model.ElementAt(1).IDSP})">
+                                            <img class="primary-img" src="@Url.Content("~/assets/images/product/" + Model.ElementAt(1).HinhAnh1)"
+                                                 alt="FB'S Prduct">
+                                            <img class="secondary-img" src="@Url.Content("~/assets/images/product/" + Model.ElementAt(1).HinhAnh1)"
+                                                 alt="FB'S Prduct">
+                                        </a>
+
+                                    </div>
+                                    <!-- Product Image Area End Here -->
+                                    <!-- Begin Product Content Area -->
+                                    <div class="product-content list-product_content">
+                                        <h2 class="product-name">
+                                            <a href="@Url.Action("ChiTietSanPham","SanPhams",new {id = Model.ElementAt(1).IDSP})">@Model.ElementAt(1).TenSP</a>
+                                        </h2>
+                                        <div class="rating-box">
+                                            <ul class="rating">
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="price-box">
+                                            <span class="new-price">@Html.Raw(Model.ElementAt(1).DonGia)</span>
+                                        </div>
+                                        <div class="product-action list-product_action">
+                                            <ul class="product-action-link">
+                                                <li class="shopping-cart_link">
+                                                    <a href="shopping-cart.html"
+                                                       title="Shopping Cart"><i class="ion-bag"></i></a>
+                                                </li>
+                                                <li class="quick-view-btn">
+                                                    <a href="#" title="Quick View"
+                                                       data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+                                                        <i class="ion-eye"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="single-product_link">
+                                                    <a href="product-details.html"
+                                                       title="Single Product"><i class="ion-link"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- Product Content Area End Here -->
+                                </div>
+                                <!-- Sigle Product Area End Here -->
+                            </div>
+                            <div class="row no-gutters">
+                                <!-- Begin Sigle Product Area -->
+                                <div class="single-product list-single_product">
+                                    <!-- Begin Product Image Area -->
+                                    <div class="product-img list-product_img">
+                                        <a href="@Url.Action("ChiTietSanPham","SanPhams",new {id = Model.ElementAt(2).IDSP})">
+                                            <img class="primary-img" src="@Url.Content("~/assets/images/product/" + Model.ElementAt(2).HinhAnh1)"
+                                                 alt="FB'S Prduct">
+                                            <img class="secondary-img" src="@Url.Content("~/assets/images/product/" + Model.ElementAt(2).HinhAnh1)"
+                                                 alt="FB'S Prduct">
+                                        </a>
+
+                                    </div>
+                                    <!-- Product Image Area End Here -->
+                                    <!-- Begin Product Content Area -->
+                                    <div class="product-content list-product_content">
+                                        <h2 class="product-name">
+                                            <a href="@Url.Action("ChiTietSanPham","SanPhams",new {id = Model.ElementAt(2).IDSP})">@Model.ElementAt(2).TenSP</a>
+                                        </h2>
+                                        <div class="rating-box">
+                                            <ul class="rating">
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="price-box">
+                                            <span class="new-price">@Html.Raw(Model.ElementAt(2).DonGia)</span>
+                                        </div>
+                                        <div class="product-action list-product_action">
+                                            <ul class="product-action-link">
+                                                <li class="shopping-cart_link">
+                                                    <a href="shopping-cart.html"
+                                                       title="Shopping Cart"><i class="ion-bag"></i></a>
+                                                </li>
+                                                <li class="quick-view-btn">
+                                                    <a href="#" title="Quick View"
+                                                       data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+                                                        <i class="ion-eye"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="single-product_link">
+                                                    <a href="product-details.html"
+                                                       title="Single Product"><i class="ion-link"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- Product Content Area End Here -->
+                                </div>
+                                <!-- Sigle Product Area End Here -->
+                                <!-- Begin Sigle Product Area -->
+                                <div class="single-product list-single_product">
+                                    <!-- Begin Product Image Area -->
+                                    <div class="product-img list-product_img">
+                                        <a href="@Url.Action("ChiTietSanPham","SanPhams",new {id = Model.ElementAt(3).IDSP})">
+                                            <img class="primary-img" src="@Url.Content("~/assets/images/product/" + Model.ElementAt(3).HinhAnh1)"
+                                                 alt="FB'S Prduct">
+                                        </a>
+
+                                    </div>
+                                    <!-- Product Image Area End Here -->
+                                    <!-- Begin Product Content Area -->
+                                    <div class="product-content list-product_content">
+                                        <h2 class="product-name">
+                                            <a href="@Url.Action("ChiTietSanPham","SanPhams",new {id = Model.ElementAt(3).IDSP})">@Model.ElementAt(3).TenSP</a>
+                                        </h2>
+                                        <div class="rating-box">
+                                            <ul class="rating">
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="price-box">
+                                            <span class="new-price">@Html.Raw(Model.ElementAt(3).DonGia)</span>
+                                        </div>
+                                        <div class="product-action list-product_action">
+                                            <ul class="product-action-link">
+                                                <li class="shopping-cart_link">
+                                                    <a href="shopping-cart.html"
+                                                       title="Shopping Cart"><i class="ion-bag"></i></a>
+                                                </li>
+                                                <li class="quick-view-btn">
+                                                    <a href="#" title="Quick View"
+                                                       data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+                                                        <i class="ion-eye"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="single-product_link">
+                                                    <a href="product-details.html"
+                                                       title="Single Product"><i class="ion-link"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- Product Content Area End Here -->
+                                </div>
+                                <!-- Sigle Product Area End Here -->
+                            </div>
+                            <div class="row no-gutters">
+                                <!-- Begin Sigle Product Area -->
+                                <div class="single-product list-single_product">
+                                    <!-- Begin Product Image Area -->
+                                    <div class="product-img list-product_img">
+                                        <a href="@Url.Action("ChiTietSanPham","SanPhams",new {id = Model.ElementAt(4).IDSP})">
+                                            <img class="primary-img" src="@Url.Content("~/assets/images/product/" + Model.ElementAt(4).HinhAnh1)"
+                                                 alt="FB'S Prduct">
+                                            <img class="secondary-img" src="@Url.Content("~/assets/images/product/" + Model.ElementAt(4).HinhAnh1)"
+                                                 alt="FB'S Prduct">
+                                        </a>
+
+                                    </div>
+                                    <!-- Product Image Area End Here -->
+                                    <!-- Begin Product Content Area -->
+                                    <div class="product-content list-product_content">
+                                        <h2 class="product-name">
+                                            <a href="@Url.Action("ChiTietSanPham","SanPhams",new {id = Model.ElementAt(1).IDSP})">@Model.ElementAt(4).TenSP</a>
+                                        </h2>
+                                        <div class="rating-box">
+                                            <ul class="rating">
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="price-box">
+                                            <span class="new-price">@Html.Raw(Model.ElementAt(4).DonGia)</span>
+                                        </div>
+                                        <div class="product-action list-product_action">
+                                            <ul class="product-action-link">
+                                                <li class="shopping-cart_link">
+                                                    <a href="shopping-cart.html"
+                                                       title="Shopping Cart"><i class="ion-bag"></i></a>
+                                                </li>
+                                                <li class="quick-view-btn">
+                                                    <a href="#" title="Quick View"
+                                                       data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+                                                        <i class="ion-eye"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="single-product_link">
+                                                    <a href="product-details.html"
+                                                       title="Single Product"><i class="ion-link"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- Product Content Area End Here -->
+                                </div>
+                                <!-- Sigle Product Area End Here -->
+                                <!-- Begin Sigle Product Area -->
+                                <div class="single-product list-single_product">
+                                    <!-- Begin Product Image Area -->
+                                    <div class="product-img list-product_img">
+                                        <a href="@Url.Action("ChiTietSanPham","SanPhams",new {id = Model.ElementAt(5).IDSP})">
+                                            <img class="primary-img" src="@Url.Content("~/assets/images/product/" + Model.ElementAt(5).HinhAnh1)"
+                                                 alt="FB'S Prduct">
+                                        </a>
+
+                                    </div>
+                                    <!-- Product Image Area End Here -->
+                                    <!-- Begin Product Content Area -->
+                                    <div class="product-content list-product_content">
+                                        <h2 class="product-name">
+                                            <a href="@Url.Action("ChiTietSanPham","SanPhams",new {id = Model.ElementAt(5).IDSP})">@Model.ElementAt(5).TenSP</a>
+                                        </h2>
+                                        <div class="rating-box">
+                                            <ul class="rating">
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="price-box">
+                                            <span class="new-price">@Html.Raw(Model.ElementAt(5).DonGia)</span>
+                                        </div>
+                                        <div class="product-action list-product_action">
+                                            <ul class="product-action-link">
+                                                <li class="shopping-cart_link">
+                                                    <a href="shopping-cart.html"
+                                                       title="Shopping Cart"><i class="ion-bag"></i></a>
+                                                </li>
+                                                <li class="quick-view-btn">
+                                                    <a href="#" title="Quick View"
+                                                       data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+                                                        <i class="ion-eye"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="single-product_link">
+                                                    <a href="product-details.html"
+                                                       title="Single Product"><i class="ion-link"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- Product Content Area End Here -->
+                                </div>
+                                <!-- Sigle Product Area End Here -->
+                            </div>
+                            <div class="row no-gutters">
+                                <!-- Begin Sigle Product Area -->
+                                <div class="single-product list-single_product">
+                                    <!-- Begin Product Image Area -->
+                                    <div class="product-img list-product_img">
+                                        <a href="@Url.Action("ChiTietSanPham","SanPhams",new {id = Model.ElementAt(6).IDSP})">
+                                            <img class="primary-img" src="@Url.Content("~/assets/images/product/" + Model.ElementAt(6).HinhAnh1)"
+                                                 alt="FB'S Prduct">
+                                            <img class="secondary-img" src="@Url.Content("~/assets/images/product/" + Model.ElementAt(6).HinhAnh1)"
+                                                 alt="FB'S Prduct">
+                                        </a>
+
+                                    </div>
+                                    <!-- Product Image Area End Here -->
+                                    <!-- Begin Product Content Area -->
+                                    <div class="product-content list-product_content">
+                                        <h2 class="product-name">
+                                            <a href="@Url.Action("ChiTietSanPham","SanPhams",new {id = Model.ElementAt(6).IDSP})">@Model.ElementAt(6).TenSP</a>
+                                        </h2>
+                                        <div class="rating-box">
+                                            <ul class="rating">
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="price-box">
+                                            <span class="new-price">@Html.Raw(Model.ElementAt(6).DonGia)</span>
+                                        </div>
+                                        <div class="product-action list-product_action">
+                                            <ul class="product-action-link">
+                                                <li class="shopping-cart_link">
+                                                    <a href="shopping-cart.html"
+                                                       title="Shopping Cart"><i class="ion-bag"></i></a>
+                                                </li>
+                                                <li class="quick-view-btn">
+                                                    <a href="#" title="Quick View"
+                                                       data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+                                                        <i class="ion-eye"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="single-product_link">
+                                                    <a href="product-details.html"
+                                                       title="Single Product"><i class="ion-link"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- Product Content Area End Here -->
+                                </div>
+                                <!-- Sigle Product Area End Here -->
+                                <!-- Begin Sigle Product Area -->
+                                <div class="single-product list-single_product">
+                                    <!-- Begin Product Image Area -->
+                                    <div class="product-img list-product_img">
+                                        <a href="@Url.Action("ChiTietSanPham","SanPhams",new {id = Model.ElementAt(7).IDSP})">
+                                            <img class="primary-img" src="@Url.Content("~/assets/images/product/" + Model.ElementAt(7).HinhAnh1)"
+                                                 alt="FB'S Prduct">
+                                        </a>
+
+                                    </div>
+                                    <!-- Product Image Area End Here -->
+                                    <!-- Begin Product Content Area -->
+                                    <div class="product-content list-product_content">
+                                        <h2 class="product-name">
+                                            <a href="@Url.Action("ChiTietSanPham","SanPhams",new {id = Model.ElementAt(7).IDSP})">@Model.ElementAt(7).TenSP</a>
+                                        </h2>
+                                        <div class="rating-box">
+                                            <ul class="rating">
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="price-box">
+                                            <span class="new-price">@Html.Raw(Model.ElementAt(7).DonGia)</span>
+                                        </div>
+                                        <div class="product-action list-product_action">
+                                            <ul class="product-action-link">
+                                                <li class="shopping-cart_link">
+                                                    <a href="shopping-cart.html"
+                                                       title="Shopping Cart"><i class="ion-bag"></i></a>
+                                                </li>
+                                                <li class="quick-view-btn">
+                                                    <a href="#" title="Quick View"
+                                                       data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+                                                        <i class="ion-eye"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="single-product_link">
+                                                    <a href="product-details.html"
+                                                       title="Single Product"><i class="ion-link"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- Product Content Area End Here -->
+                                </div>
+                                <!-- Sigle Product Area End Here -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FB's List Product Area End Here -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

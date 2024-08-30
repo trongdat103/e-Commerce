@@ -1,0 +1,31 @@
+﻿<li class="hm-minicart"style="color:white; margin-left: 50px;">
+    <div class="" style="color:white; margin-left: 50px;">
+        @if (Session["TaiKhoan"] != null)
+        {
+            <span>
+                <a href="@Url.Action("XemGioHang", "Giohang")">
+                    Giỏ hàng
+                    <span class="item-icon">
+                        <span class="cart-item-count">@ViewBag.TongSoLuong</span>
+                    </span>
+                    <span class="item-total">@ViewBag.TongTien.ToString("#,##")VNĐ</span>
+                </a>
+            </span>
+        }
+        else
+        {          
+            <span>
+                <a href="@Url.Action("Dangnhap", "NguoiDung")">
+                    Giỏ hàng
+                    <span class="item-icon">
+                        <span class="cart-item-count"></span>
+                    </span>
+                    <span class="item-total">VNĐ</span>
+                </a>
+            </span>
+        }
+
+    </div>
+    <span></span>
+</li>
+
